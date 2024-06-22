@@ -72,10 +72,10 @@ in
     gtk = {
       theme =
         let
-          tweaks = lib.replaceStrings [ "normal" ] [ "default" ] (lib.concatStringsSep "+" cfg.tweaks);
+          tweakName = lib.concatStringsSep "," cfg.tweaks;
         in
         {
-          name = "catppuccin-${cfg.flavor}-${cfg.accent}-${cfg.size}+${tweaks}";
+          name = "catppuccin-${cfg.flavor}-${cfg.accent}-${cfg.size}+${tweakName}";
           package = pkgs.catppuccin-gtk.override {
             inherit (cfg) size tweaks;
             accents = [ cfg.accent ];
