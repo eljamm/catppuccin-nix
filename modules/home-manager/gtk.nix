@@ -61,12 +61,13 @@ in
 
   config = lib.mkIf enable {
     warnings = [
-      ''
-        `gtk.catppuccin` is deprecated and will be removed in a future release.
-
-        The upstream port has been archived and support will no longer be provided.
-        Please see https://github.com/catppuccin/gtk/issues/262
-      ''
+      # NOTE: I know it's deprecated
+      # ''
+      #   `gtk.catppuccin` is deprecated and will be removed in a future release.
+      #
+      #   The upstream port has been archived and support will no longer be provided.
+      #   Please see https://github.com/catppuccin/gtk/issues/262
+      # ''
     ];
 
     gtk = {
